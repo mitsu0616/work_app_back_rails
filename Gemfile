@@ -46,3 +46,5 @@ group :development do
   # gem "spring"
 end
 
+# CORS対応
+gem 'rack-cors'
