@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'users/test', to: 'users#test'
   get 'users', to: 'users#index'
-  get 'users/:id', to: 'users#show'
+  get 'user', to: 'users#get_by_mail'
   post 'users', to: 'users#create'
   
   resources :work_hours, only: [:index, :create]

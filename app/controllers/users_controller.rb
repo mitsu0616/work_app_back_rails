@@ -11,6 +11,16 @@ class UsersController < ApplicationController
     render status: 200, json: @users
   end
 
+  # mail指定で取得
+  def get_by_mail
+    @user = User.find_by(mail: params[:mail])
+    result = {
+      user_id: @user[:id],
+      mail: @user[:mail]
+    }
+    render status: 200, json: result
+  end
+
   # 新規登録
   def create
     @user = User.new(user_params) # インスタンス化
