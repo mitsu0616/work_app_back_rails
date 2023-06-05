@@ -12,6 +12,12 @@ class WorkHoursController < ApplicationController
     render status: 200, json: { data: @work_hours, count: @work_hours.length }
   end
 
+  def get_by_date
+    @work_hour = WorkHour.find_by(user_id: params[:user_id], date: params[:date])
+
+    render status: 200, json: @work_hour
+  end
+
   # 新規登録
   def create
     @work_hour = WorkHour.new(work_hour_params)

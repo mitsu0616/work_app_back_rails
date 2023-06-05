@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :work_hours, only: [:index, :create]
   put 'work_hours', to: 'work_hours#update'
   delete 'work_hours/:id', to: 'work_hours#destroy'
+  get 'work_hour', to: 'work_hours#get_date'
 end
