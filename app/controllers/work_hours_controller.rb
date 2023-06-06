@@ -51,7 +51,7 @@ class WorkHoursController < ApplicationController
     # 更新対象が無ければエラーで終了
     if @work_hour.nil?
       render status: 500, json: { status: 1, message: 'not find' }
-      return
+      return # returnを使うべきなのか、べスプラ調査
     end
 
     # 更新処理
